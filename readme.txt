@@ -4,3 +4,95 @@ link do material
 https://docs.google.com/document/d/1aBWrCiAeXuHqVcDdRsHoC_8jyGqVIe15tobZwNl8ReQ/edit?tab=t.72vz2g3jy4ee
 atalhos vs code
 https://docs.google.com/document/d/1KdvExw5LI2lgL6EIuNTtZCiSvDHKob-AU8iQLQo0QyY/edit?tab=t.0#heading=h.82v803fyp8px	
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Javailson scripton (javascript ) É uma linguagem de programação -->
+
+
+
+
+    <script>
+
+        // Armazenamento 
+        // Processamento
+
+       
+    
+    </script>
+    
+</body>
+</html>
+
+==========================================
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Javailson scripton (javascript ) É uma linguagem de programação -->
+
+
+
+
+    <script>
+
+        // Armazenamento 
+        // Processamento
+
+        let nome = prompt("Digite seu nome:")
+        console.log("Olá, "+ nome+ " Seja bem vindo ao Javascript!")
+        console.log(`Olá ${nome} Seja bem vindo ao Javascript`)  
+        console.log('Olá ${nome} Seja bem vindo ao Javascript')
+      
+
+        // Para utilizar o template string
+        // sempre utilizar craze (não funciona com aspas)
+        // O Valor de variável ira ficar logo dentro da estrutura a seguir o ${}
+    </script>
+    
+</body>
+</html>
+
+
+====================================
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <button id="botao" >Mudar cor</button>
+
+
+
+    <script>
+        const botao = document.querySelector("#botao")
+        const body = document.querySelector("body")
+
+        //
+        botao.addEventListener("click",()=>{
+            body.style.background = "black"
+        })
+
+      
+    </script>
+    
+</body>
+</html>
