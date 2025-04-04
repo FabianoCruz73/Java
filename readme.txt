@@ -1,5 +1,6 @@
 Aulas de javascript 
-https://dontpad.com/519-27-03 
+https://dontpad.com/519-27-03
+https://dontpad.com/519-27-03/anotacoes
 link do material 
 https://docs.google.com/document/d/1aBWrCiAeXuHqVcDdRsHoC_8jyGqVIe15tobZwNl8ReQ/edit?tab=t.72vz2g3jy4ee
 atalhos vs code
@@ -96,3 +97,10 @@ https://docs.google.com/document/d/1KdvExw5LI2lgL6EIuNTtZCiSvDHKob-AU8iQLQo0QyY/
     
 </body>
 </html>
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Aula 02 03/04/2025
+
+https://dontpad.com/519-03-04
+https://dontpad.com/519-03-04/anotacoes
+
