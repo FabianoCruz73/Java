@@ -4,7 +4,10 @@ https://dontpad.com/519-27-03/anotacoes
 link do material 
 https://docs.google.com/document/d/1aBWrCiAeXuHqVcDdRsHoC_8jyGqVIe15tobZwNl8ReQ/edit?tab=t.72vz2g3jy4ee
 atalhos vs code
-https://docs.google.com/document/d/1KdvExw5LI2lgL6EIuNTtZCiSvDHKob-AU8iQLQo0QyY/edit?tab=t.0#heading=h.82v803fyp8px	
+https://docs.google.com/document/d/1KdvExw5LI2lgL6EIuNTtZCiSvDHKob-AU8iQLQo0QyY/edit?tab=t.0#heading=h.82v803fyp8px
+
+Turma no nosso classroom
+https://classroom.google.com/c/NzcxMzYzNzcwOTkw?cjc=zbxcbbgq
 
 <!DOCTYPE html>
 <html lang="en">
@@ -103,4 +106,15 @@ Aula 02 03/04/2025
 
 https://dontpad.com/519-03-04
 https://dontpad.com/519-03-04/anotacoes
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Aula 03 10/04/2025
+
+https://dontpad.com/519-10-04
+https://dontpad.com/519-10-04/anotacoes
+
+Turma no nosso classroom
+https://classroom.google.com/c/NzcxMzYzNzcwOTkw?cjc=zbxcbbgq
+
+
 
