@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <label for="">Numero1</label>
+        <input type="text" placeholder="Digite o número 1" id="numero1">
+    </div>
+    
+    <div>
+        <label for="">Numero2</label>
+        <input type="text" placeholder="Digite o número 2" id="numero2">
+    </div>
+
+    <button id="botao">Multiplicar</button>
+    
+    <p id="resultado">Resultado:</p>
+
+    <script>
+        let numero1 = document.querySelector("#numero1")
+        let numero2 = document.querySelector("#numero2")
+        let resultado = document.querySelector("#resultado")
+
+        // adicionar um escutador de eventos
+        let botao = document.querySelector("#botao")
+            
+        // pega o valor do input
+        botao.addEventListener("click",()=>{
+            console.log(numero1.value)
+            console.log(numero2.value)
+            console.log(parseInt(numero1.value) * parseInt(numero2.value)) // soma no console
+            // Insere no resultado
+            resultado.innerHTML += numero1.value + " x " + numero2.value + " = " + (parseInt(numero1.value) * parseInt(numero2.value)) // soma os dois valores e transforma em inteiro
+
+        })
+
+    </script>
+
+
+</body>
+</html>

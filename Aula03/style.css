@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+section {
+    height: 50vh;
+    display: flexbox;
+    background-color: #fafafa;
+    
+    box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.2);
+}
