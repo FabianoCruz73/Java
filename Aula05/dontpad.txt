@@ -1,0 +1,65 @@
+-------------------------------------
+Boa noite!!!
+
+20:45 Estamos de volta 
+
+
+site para exercitar a lógica de programação
+https://projecteuler.net/archives
+
+Tokken de hoje: 8188
+dontpad de hoje: https://dontpad.com/519-24-04
+
+link da turma no classroom:
+https://classroom.google.com/c/NzcxMzYzNzcwOTkw?cjc=zbxcbbgq
+
+
+
+Lista de exercicios
+https://github.com/isquicha/exercicios-logica-python
+
+
+-------------------------------------
+
+ // For é usado quanto temos uma ideia de limite da repetição
+// while é utilizado quando não temos um limite bem definido 
+// let nomeUser = prompt("Digite seu nome de usuário")
+// let senhaUser = prompt("Digite sua senha:")
+let contador = 0
+while (contador < 10){
+
+    console.log(contador)
+    contador ++
+    
+    
+}
+================================================
+
+atividade 
+Utilizando a estrutura de repetição while faça os exercícios a seguir:
+
+
+1 - Façam um contador de 1 a 100
+2 - Façam um contador de 10 a 100 de 2 em 2
+3 - Façam um contador de 1 a 100 de 3 em 3
+4 - Façam um contador de 100 a 1
+5 - Façam a soma de todos os números pares de 1 a 10
+6 - Façam a soma de todos os números ímpares de 1 a 20
+7 - Faça um sistema de login que recebe primeiro o nome de usuário e logo após a senha, o algoritmo deverá repetir enquanto o usuário não acertar o nome de usuário correto (admin) e a senha 
+8 - Fibonacci: Escreva um programa em Python usando o while para imprimir os primeiros 10 termos da sequência de Fibonacci. podem pesquisar no google o que é fibonacci
+
+============================================
+
+Desafios mais 
+
+rodem no terminal 
+
+- abra o terminal apertando ctrl + j
+- escrevam --->"node nomeArquivo.js" troquem o nomeArquivo pelo nome do arquivo .js que vocês criaram
+- caso entre em looping infinito deem CTRL + C
+
+BOTAO DE EMERGENCIA ----:> CTRL + C
+interrompe a execução do terminal
+
+
+===========================================================================================
