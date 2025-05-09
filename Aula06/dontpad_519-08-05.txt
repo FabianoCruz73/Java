@@ -1,0 +1,117 @@
+====================================================
+
+BOA NOITEEEE!!!
+
+Tokken de hoje: 8427
+
+link da turma no classroom:
+https://classroom.google.com/c/NzcxMzYzNzcwOTkw?cjc=zbxcbbgq
+
+https://classroom.google.com/c/NzcxMzYzNzcwOTkw?cjc=zbxcbbgq
+
+===================================================
+
+// console.log("Olá Mundo!")
+// receba um número e defina se ele é par e depois exiba no terminal
+
+// Estrutura de código normal
+// Entrada
+let numero = 10
+// console.log(10/2) // pega o quociente
+// console.log(10%2) // pega o resto
+
+// Processaemnto
+let resultado = ""
+
+if (numero % 2 == 0){
+    resultado = "Par"
+}else{
+    resultado = "Impar"
+}
+
+// Saída
+console.log(resultado)
+
+
+// Estrutura Função
+function define_par(numero){
+    let resultado = ""
+
+    if (numero % 2 == 0){
+        resultado = "Par"
+    }else{
+        resultado = "Impar"
+    }
+    return resultado
+}
+
+console.log(define_par(5))
+console.log(define_par(10))
+console.log(define_par(12))
+console.log(define_par(15))
+console.log(define_par(20))
+
+Exercício 1
+"index.html"
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funções</title>
+    <script src="script2.js"></script>
+</head>
+<body>
+    
+</body>
+</html>
+
+"script2.js"
+
+function define_numero(numero) {
+    let resultado = ""
+    if (numero > 0) {
+        resultado = "Positivo"
+    } else if (numero < 0) {
+        resultado = "Negativo"
+    } else {
+        resultado = "Nulo"
+    }
+    return resultado
+    }
+
+let numero = parseInt(prompt("Insira um número:"))
+console.log(define_numero(numero))
+
+2 - baseado no Código acima faça um algoritmo que receba um nome e retorne uma mensagem de boas vindas. Exemplo: Ola seja bem vindo {nome}
+"script3.js"
+
+function boas_vindas(nome) {
+    // Retorna a mensagem de boas-vindas
+    let resultado = 'Boas vindas'
+    return `${resultado}, ${nome}`
+}
+let nome = prompt("Insira seu nome:")
+console.log(boas_vindas(nome))
+
+3 - baseado no Código acima faça um algoritmo que receba um número e retorne ele ao quadrado
+4 - baseado no Código acima faça um algoritmo que receba um número e retorne o dobro dele
+"script4.js"
+
+function dobro(numero) {
+    // Retorna o dobro
+    let resultado = numero * 2
+    return `o dobro de ${numero} é ${resultado}`
+}
+let numero = parseInt(prompt("Insira um número:"))
+console.log(dobro(numero))
+alert(dobro(numero))
+
+5 - baseado no Código acima faça um algoritmo que receba um número e defina se ele é primo(DESAFIO).
+
+
+
+
+
+
