@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="array.js"></script> -->
+  </head>
+  <body>
+    <script>
+      function verificar_idade(idade) {
+        let resultado = ""; // Corrigido aqui
+        if (idade < 18) {
+          resultado = "Você é menor de idade."; // Corrigido aqui
+        } else {
+          resultado = "Você é maior de idade."; // Corrigido aqui
+        }
+        return resultado;
+      }
+
+      let idade1 = Number(prompt("Insira a sua idade: ")); // Melhorando a formatação
+      let testeidade = verificar_idade(idade1);
+      console.log(testeidade);
+    </script>
+  </body>
+</html>

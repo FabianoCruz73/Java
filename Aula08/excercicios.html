@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ex1:
+      //   function calculo_lache(n1, n2) {
+      //     let resultado = n1 * 5 + n2 * 4;
+      //     return resultado;
+      //   }
+
+      //   let n1 = Number(prompt("Insira a quantidade de coxinhas: "));
+      //   let n2 = Number(prompt("Insira a quantidade de sucos "));
+      //   let preco_lanche = calculo_lache(n1, n2);
+      //   console.log(`O preço total do lanche foi: R$ ${preco_lanche.toFixed(2)} `);
+
+      // ex2:
+      //   function verificar_bateria(nivel) {
+      //     let resultado = "";
+      //     if (nivel <= 20) {
+      //       resultado = "Carregue seu celular";
+      //     } else {
+      //       resultado = "Bateria OK!";
+      //     }
+      //     return resultado;
+      //   }
+
+      //   let nivel1 = Number(prompt("Insira o nível da bateria: "));
+      //   let testebateria = verificar_bateria(nivel1);
+      //   console.log(testebateria);
+
+      // ex3:
+      //   function verificar_desempenho(nota) {
+      //     let resultado = "";
+      //     if (nota >= 90) {
+      //         resultado = "EXELENTE";
+      //     }
+      //     else if (nota >= 70 && nota < 90) {
+      //         resultado = "BOM";
+      //     }
+      //     else {
+      //         resultado = "Precisa melhorar";
+      //     }
+      //     return resultado;
+      //   }
+
+      //   let nota1 = Number(prompt("Insira a nota: ")); // Melhorando a formatação
+      //   let avaliacao = verificar_desempenho(nota1);
+      //   console.log(avaliacao);
+
+      // ex5:
+    //   const calculo_parcelas = (preco, parcelas) => (preco / parcelas).toFixed(2);
+
+    //   let preco = Number(prompt("Insira preço do produto: "));
+    //   let parcelas = Number(prompt("Insira número de parcelas: "));
+    //   console.log(`O parcelamento ficou em: ${parcelas} parcelas de R$ ${calculo_parcelas(preco, parcelas)}`);
+
+      // ex1 laranja:
+        function calculartroco(valorpago, valorproduto){
+            let resultado = ""
+            if (valorpago < valorproduto){
+                resultado = "Valor insuficiente";
+            }
+            else{
+                resultado = valorpago - valorproduto;
+            }
+            return resultado;
+        }
+        
+        let valorpago = Number(prompt("Insira o valor pago: "));
+        let valorproduto = Number(prompt("Insira o valor do produto: "));
+        let troco = calculartroco(valorpago, valorproduto);
+        console.log(troco);
+
+
+
+
+    </script>
+  </body>
+</html>
