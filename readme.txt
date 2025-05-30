@@ -115,6 +115,15 @@ https://dontpad.com/519-10-04/anotacoes
 
 Turma no nosso classroom
 https://classroom.google.com/c/NzcxMzYzNzcwOTkw?cjc=zbxcbbgq
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Aula 08 e 09
+
+LINK DO MATERIAL DA AULA DA SEMANA PASSADA:
+https://docs.google.com/document/d/1Adc58qkBSVbM0vSWLthTWQ6-53NQPQQTc8s5olu72pM/edit?usp=sharing
+
+LINK DO MATERIAL AULA DIA 29 DE MAIO (HOJE):
+https://docs.google.com/document/d/1i8wk0serPQ2TEzrjP-50UL4U3uGkmgYx7EYAqMahuVY/edit?usp=sharing
 
 
 
