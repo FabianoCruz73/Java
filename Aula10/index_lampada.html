@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+    </style>
+</head>
+<body>
+    <!-- Crie uma lógica que ligue e desligue a lampada conforme o mouse passar em cima dela.
+        - Se ela estiver ligada, desligue
+        - se ela estiver desligada, ligue  
+    -->
+    <img id="lampada" src="https://fernandoleonid.github.io/mini-projetos-js/01-lamp/img/desligada.jpg"
+    onmouseenter="acender(),texto1()"
+    onmouseleave="desligar(),texto2()">
+
+    <p id="resultado"></p>
+    
+    
+
+    <script>
+
+        const linkLampadaDesligada = "https://fernandoleonid.github.io/mini-projetos-js/01-lamp/img/desligada.jpg"
+        const linkLampadaLigada = "https://fernandoleonid.github.io/mini-projetos-js/01-lamp/img/ligada.jpg"
+        const paragrafo = document.getElementById("resultado")
+
+        function acender (){
+            // pegar o elemento
+            let imagem = document.getElementById("lampada")
+            // altera o source src
+            imagem.src = linkLampadaLigada
+        }
+
+        function desligar (){
+            // pegar o elemento
+            let imagem = document.getElementById("lampada")
+            // altera o source src
+            imagem.src = linkLampadaDesligada
+        }
+
+        function texto1 (){
+            paragrafo.innerHTML = "acendeu"
+        }
+
+        function texto2 (){
+            paragrafo.innerHTML = ""
+        }
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="criarElementos()" id="botao">Criar</button>
+
+    <ul id="resultado">
+        <li>Primeiro</li>
+        
+
+    </ul>
+    <h1 id="titulo">Elemento titulo</h1>
+
+    <script>
+        const botao = document.getElementById("botao")
+        const resultado = document.getElementById("resultado")
+        const titulo = document.getElementById("titulo")
+
+
+        titulo.addEventListener("click",(event)=>{
+            titulo.remove()
+        })
+
+
+        function criarElementos(){
+            const li = document.createElement("li")
+            const titulo = document.createElement("h1")
+
+            titulo.textContent = "Ola mundo"
+            li.textContent = "Outro"
+            
+            resultado.appendChild(li)
+            resultado.appendChild(titulo)
+
+        }
+        
+    </script>
+
+</body>
+</html>
