@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LIsta Tarefas</h1>
+    <input type="text" placeholder="Digite uma nova tarefa" id="tarefa">
+
+
+    <ul id="lista"></ul>
+
+    <button id="botao">Adicionar</button>
+
+ 
+<script>
+    let tarefasLs = JSON.parse(localStorage.getItem("Tarefas"))
+    
+    console.log(tarefasLs)
+
+    let tarefaInput = document.querySelector("#tarefa")
+    let lista = document.querySelector("#lista")
+    let botao = document.querySelector("#botao")
+
+    
+
+    // ADICIONAR UM ESCUTADOR DE EVENTOS
+    botao.addEventListener("click",()=>{
+        let tarefa = tarefaInput.value 
+        tarefasLs.push(tarefa)
+        alert("Tarefa adicionada com sucesso")
+        localStorage.setItem("Tarefas",tarefasLs)
+        carregarTarefas()
+    })
+
+    function carregarTarefas(){
+        lista.innerHTML = ""
+        
+        for (tarefa of tarefasLs){
+            let li = document.createElement("li")
+            li.textContent = tarefa 
+            lista.appendChild(li)
+        }
+    }
+    carregarTarefas()
+</script>
+</body>
+</html>

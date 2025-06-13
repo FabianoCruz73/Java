@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Soma de dois números</h1>
+        <label for="numero1">1º Número</label>
+        <input type="text" id="numero1">
+
+        <label for="numero2">2º Número</label>
+        <input type="text" id="numero2">
+
+        <button id="botao">Somar</button>
+
+        <div id="resultado">
+            <p>Resultado</p>
+        </div>
+    </div>
+
+    <script>
+        let numero1 = document.querySelector("#numero1")
+        let numero2 = document.querySelector("#numero2")
+        let resultado = document.querySelector("#resultado")
+        let botao = document.querySelector("#botao")
+
+        botao.addEventListener("click", () => {
+            let soma = Number(numero1.value) + Number(numero2.value)
+            resultado.innerHTML = `<p>Resultado: ${soma}</p>`
+        })
+    </script>
+
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 300px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+
+    button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #resultado {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #4CAF50;
+    }
+</style>
+
+    
+</body>
+</html>

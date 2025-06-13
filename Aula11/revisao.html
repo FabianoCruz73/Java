@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Olá Mundo</h1>
+    <p id="paragrafo" onclick="aumentartamanho()">Isso é um paragrafo</p>
+
+    <script>
+        // 1o passo - selecionar o elemento que eu quero manipular
+        let titulo = document.querySelector("h1") // seleciona pela tag
+
+        let paragrafo = document.querySelector("#paragrafo") // seleciona pelo id
+
+        // textContent armazana o texto da tag ou id
+
+
+        // 2a passo - construo a função para ser associado ao evento
+
+        function aumentartamanho(){
+            paragrafo.style.fontSize = "50px"
+            paragrafo.style.background = "red"
+        }
+
+
+
+
+    </script>
+</body>
+</html>
