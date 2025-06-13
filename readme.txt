@@ -706,6 +706,97 @@ Faça um algoritmo que receba dois números atraves do input do html e retorne e
 
 Localstorage é um armazenamento local no navegador
 - o navegador somente armazena JSON
-- Para salvar um elemento no local storage precisamos converter um objeto ou um array para JSON
+- Para salvar um elemento no local storage precisamos converter um objeto ou um array para JSON ---> JSON.stringify()
+- para salvar --> setItem(chave,valor) ---> VALOR TEM QUE ESTAR EM JSON
+- para recolher ou pegar os elementos podemos utilizar o getItem(chave)
+- 
+
+-------------------
+
+Salvem 5 tarefas no LocalStorage
+- pegar as tarefas de volta com getItem
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let produtos = ["Chocolate","MOrango","pastel de flango"]
+        let novo = localStorage.setItem("produtos",JSON.stringify(produtos))
+        let chocolate = localStorage.getItem("Item1")
+        console.log(chocolate)
+    </script>
+</body>
+</html>
+
+=========================================================================================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LIsta Tarefas</h1>
+    <input type="text" placeholder="Digite uma nova tarefa" id="tarefa">
+
+
+    <ul id="lista">
+        
+
+    </ul>
+    <button id="botao">Adicionar</button>
+
+ 
+<script>
+    // tras as tarefas que estão como JSON n    o localstorage e transofrma para um array tarefas -->ls significa localstorage
+
+    let tarefasLs = (localStorage.getItem("Tarefas").split(","))
+    console.log(tarefasLs)
+    console.log(typeof(tarefasLs))
+
+
+    let lista = document.querySelector("#lista")
+    let tarefaInput = document.querySelector("#tarefa")
+
+    let botao = document.querySelector("#botao")
+
+    botao.addEventListener("click",()=>{
+        let tarefa = tarefaInput.value 
+        tarefasLs.push(tarefa)
+        alert("Tarefa Adicionada com sucesso!")
+        localStorage.setItem("Tarefas",JSON.stringify(tarefasLs))
+        carregarTarefas()
+    })
+
+    function carregarTarefas(){
+        lista.innerHTML = ""
+        
+        for (tarefa of tarefasLs){
+            let li = document.createElement("li")
+            li.textContent = tarefa 
+            lista.appendChild(li)
+
+        }
+
+
+    }
+    carregarTarefas()
+</script>
+    
+</body>
+</html>
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Aula 12
 
 
