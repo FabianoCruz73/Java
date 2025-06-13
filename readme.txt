@@ -126,6 +126,8 @@ LINK DO MATERIAL AULA DIA 29 DE MAIO (HOJE):
 https://docs.google.com/document/d/1i8wk0serPQ2TEzrjP-50UL4U3uGkmgYx7EYAqMahuVY/edit?usp=sharing
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Aula 10
 
@@ -455,5 +457,255 @@ Façam um sistema de cadastro de usuários baseado no html a seguir, implemente 
 </body>
 </html>	
 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Aula 11
+
+Boa noiteeeeeeeee
+
+Feliz dia dos namorados!
+
+token de hoje:6911
+
+material de consumo de api
+https://docs.google.com/document/d/1oAWobOZW2f_8i0y1dO2BpXDrY8sEtL2sSh2myaTKDc0/edit?usp=sharing
+
+material da ultima aula 
+https://dontpad.com/519-05-06
+
+MATERIAL DA AULA DE HOJE DE DOM
+https://docs.google.com/document/d/1EuXGRudil_hBr1_t-XhMT3F7Tz4jjOxnJEYS71sbCO4/edit?usp=sharing
+
+LINK DA TURMA NO MEET 
+https://classroom.google.com/c/NzcxMzYzNzcwOTkw?cjc=zbxcbbgq
+
+
+DOM ---> MANIPULAR HTML ATRAVES DO JS
+
+
+EVENTOS ---> Fenômenos que acontecem na minha página
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1 >Ola mundo</h1>
+    <p id="paragrafo" onclick="aumentarTamanho()">Isso é um texto</p>
+
+    <script>
+        // 1º passo selecionar o elemento que eu quero manipular
+        let titulo = document.querySelector("h1")
+        let paragrafo = document.querySelector("#paragrafo")
+        
+
+        
+        // textContent armazena o texto da tag
+     
+        // 2º passo principal construo a função para ser associada ao evento 
+        
+        function aumentarTamanho(){
+            paragrafo.style.background = "red"
+            paragrafo.style.fontSize = "50px"
+        }
+
+    </script>
+</body>
+</html>
+================================================================================
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Define Par ou Impar</h1>
+    <label for="">numero</label>
+    <input type="text" id="numero">
+
+    <button onclick="analisarPar()">Analisar</button>
+
+    <div id="resultado">
+        <p>Resultado</p>
+    </div>
+
+    <script>
+        let numero = document.querySelector("#numero")
+        let resultado = document.querySelector("#resultado")
+
+        function analisarPar(){
+            resultado.innerHTML = ""
+            let valor_numero = Number(numero.value )
+            console.log(valor_numero)
+            if(valor_numero % 2 == 0){
+                resultado.innerHTML += "Par"
+            }else{
+                resultado.innerHTML += "Impar"
+
+            }
+        }
+
+
+    </script>
+
+    
+</body>
+</html>
+===================================================================================
+Faça um algoritmo que receba dois números atraves do input do html e retorne em uma div com id resultado o valor da soma destes dois números 
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma de Números</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #acb6e5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Soma</h1>
+        <input type="number" id="numero1" placeholder="Digite o primeiro número">
+        <input type="number" id="numero2" placeholder="Digite o segundo número">
+        <button id="botao">Somar</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        let numero1 = document.querySelector("#numero1")
+        let numero2 = document.querySelector("#numero2")
+        let resultado = document.querySelector("#resultado")
+        let botao = document.querySelector("#botao")
+
+        botao.addEventListener("click", () => {
+            let soma = Number(numero1.value) + Number(numero2.value)
+            resultado.innerHTML = `Resultado: ${soma}`
+        })
+    </script>
+</body>
+</html>
+
+================================================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>LIsta Tarefas</h1>
+    <input type="text" placeholder="Digite uma nova tarefa" id="tarefa">
+
+
+    <ul id="lista">
+        
+
+    </ul>
+    <button id="botao">Adicionar</button>
+
+ 
+<script>
+    let tarefasLs = localStorage.getItem("Tarefas")
+    let conversaoTarefas = JSON.parse(tarefasLs)
+    console.log(conversaoTarefas)
+   
+    let lista = document.querySelector("#lista")
+    let tarefaInput = document.querySelector("#tarefa")
+
+    let botao = document.querySelector("#botao")
+
+    // ADICIONAR UM ESCUTADOR DE EVENTOS
+    // botao.addEventListener("click",()=>{
+    //     let tarefa = tarefaInput.value 
+    //     tarefas.push(tarefa)
+    //     carregarTarefas()
+
+    // })
+    function carregarTarefas(){
+        lista.innerHTML = ""
+        
+        for (tarefa of conversaoTarefas){
+            let li = document.createElement("li")
+            li.textContent = tarefa 
+            lista.appendChild(li)
+        }
+    }
+    carregarTarefas()
+</script>
+</body>
+</html>
+==================================================================================
+
+Localstorage é um armazenamento local no navegador
+- o navegador somente armazena JSON
+- Para salvar um elemento no local storage precisamos converter um objeto ou um array para JSON
 
 
