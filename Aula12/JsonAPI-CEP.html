@@ -1,0 +1,216 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de CEP</title>
+    <style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e0f2f7; /* Um azul claro suave */
+        display: flex;
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
+        min-height: 100vh; /* Garante que o corpo ocupe a altura total da tela */
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box; /* Inclui padding e borda no cálculo da largura/altura */
+    }
+
+    .card {
+        background-color: #ffffff; /* Fundo branco para o card */
+        border-radius: 12px; /* Cantos arredondados */
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+        padding: 30px; /* Espaçamento interno */
+        width: 100%; /* Ocupa a largura total disponível */
+        max-width: 500px; /* Largura máxima para o card em telas grandes */
+        box-sizing: border-box;
+        
+        /* Layout Flexbox para os elementos internos */
+        display: flex;
+        flex-direction: column; /* Organiza os itens em coluna (um abaixo do outro) */
+        gap: 15px; /* Espaçamento entre os elementos filhos */
+    }
+
+    .card h2 {
+        text-align: center; /* Centraliza o título */
+        color: #3f51b5; /* Um azul mais escuro para o título */
+        margin-bottom: 25px; /* Espaço abaixo do título */
+        font-size: 1.8em; /* Tamanho da fonte do título */
+    }
+
+    label {
+        display: block; /* Garante que a label fique em sua própria linha */
+        margin-bottom: 5px; /* Espaço abaixo da label */
+        font-weight: 600; /* Texto da label um pouco mais encorpado */
+        color: #555;
+        font-size: 0.95em;
+    }
+
+    input[type="number"],
+    input[type="text"] {
+        width: calc(100% - 22px); /* Ocupa a largura total menos o padding e a borda */
+        padding: 11px;
+        border: 1px solid #cce7ee; /* Borda mais suave */
+        border-radius: 8px; /* Cantos arredondados para os inputs */
+        box-sizing: border-box;
+        font-size: 1em;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave ao focar */
+    }
+
+    input[type="number"]:focus,
+    input[type="text"]:focus {
+        border-color: #64b5f6; /* Borda azul ao focar */
+        box-shadow: 0 0 5px rgba(100, 181, 246, 0.5); /* Sombra suave ao focar */
+        outline: none; /* Remove o contorno padrão do navegador */
+    }
+
+    input[readonly] {
+        background-color: #f8fbfd; /* Fundo levemente acinzentado para campos somente leitura */
+        cursor: default; /* Cursor padrão */
+        color: #777;
+    }
+
+    button {
+        background-color: #42a5f5; /* Um azul vibrante para o botão */
+        color: white; /* Texto branco */
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px; /* Cantos arredondados para o botão */
+        cursor: pointer; /* Cursor de mão ao passar o mouse */
+        font-size: 1.1em;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave ao interagir */
+        width: 100%; /* Ocupa a largura total */
+        box-sizing: border-box;
+        margin-top: 10px; /* Espaçamento acima do botão */
+    }
+
+    button:hover {
+        background-color: #2196f3; /* Azul um pouco mais escuro ao passar o mouse */
+        transform: translateY(-2px); /* Leve levantamento ao passar o mouse */
+    }
+
+    /* Estilo para os divs que contêm labels e inputs (para garantir espaçamento uniforme) */
+    /* O 'gap' no '.card' já cuida da maior parte do espaçamento, mas este pode ser útil para ajustes finos */
+    .card > div {
+        margin-bottom: 5px; /* Pequeno espaçamento adicional entre blocos de input/label */
+    }
+
+    /* --- Media Queries para Responsividade --- */
+
+    /* Telas Pequenas (Smartphones - até 600px de largura) */
+    @media (max-width: 600px) {
+        body {
+            padding: 15px; /* Reduz o padding do corpo */
+        }
+
+        .card {
+            padding: 20px; /* Reduz o padding interno do card */
+            border-radius: 10px; /* Cantos levemente menos arredondados */
+            gap: 12px; /* Reduz o espaçamento entre os elementos */
+        }
+
+        .card h2 {
+            font-size: 1.5em; /* Reduz o tamanho do título */
+            margin-bottom: 20px;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            padding: 10px; /* Reduz o padding dos inputs */
+            font-size: 0.95em; /* Reduz o tamanho da fonte dos inputs */
+        }
+
+        button {
+            padding: 10px 15px; /* Reduz o padding do botão */
+            font-size: 1em; /* Reduz o tamanho da fonte do botão */
+        }
+    }
+
+    /* Telas Médias (Tablets - entre 601px e 900px de largura) */
+    @media (min-width: 601px) and (max-width: 900px) {
+        .card {
+            max-width: 450px; /* Um pouco mais estreito para tablets */
+            padding: 25px; /* Ajusta o padding */
+        }
+
+        .card h2 {
+            font-size: 1.6em; /* Ajusta o tamanho do título */
+        }
+    }
+
+    /* Telas Grandes (Desktops - a partir de 901px de largura) */
+    @media (min-width: 901px) {
+        .card {
+            max-width: 500px; /* Largura padrão para desktops, conforme definido no estilo base */
+        }
+    }
+</style>
+</head>
+<body>
+    <div class="card">
+        <h2>Buscar Endereço por CEP</h2>
+        <label for="cep">CEP</label>
+        <input type="number" id="cep">
+
+        <button id="botao" onclick="carregarCEP()">Buscar CEP</button>
+        
+        <div>
+            <label for="rua">Rua</label>
+            <input type="text" id="rua" readonly>
+        </div>
+
+        <div>
+            <label for="bairro">Bairro</label>
+            <input type="text" id="bairro" readonly>
+        </div>
+
+        <div>
+            <label for="city">Cidade</label>
+            <input type="text" id="city" readonly>
+        </div>
+
+        <div>
+            <label for="uf">UF</label>
+            <input type="text" id="uf" readonly>
+        </div>
+    </div>
+
+    <script>
+        const ruaInput = document.querySelector("#rua")
+        const bairroInput = document.querySelector("#bairro")
+        const cityInput = document.querySelector("#city")
+        const UFInput = document.querySelector("#uf")
+
+        async function carregarCEP(){
+            const cepInput = document.querySelector("#cep").value
+            const url = `https://viacep.com.br/ws/${cepInput}/json/`
+
+            try {
+                const response = await fetch(url)
+                const data = await response.json()
+                
+                if (data.erro) {
+                    alert('CEP não encontrado. Verifique o número digitado.');
+                    // Limpa os campos se o CEP for inválido
+                    ruaInput.value = '';
+                    bairroInput.value = '';
+                    cityInput.value = '';
+                    UFInput.value = '';
+                } else {
+                    ruaInput.value = data.logradouro
+                    bairroInput.value = data.bairro
+                    cityInput.value = data.localidade
+                    UFInput.value = data.uf
+                }
+            } catch (error) {
+                alert('Ocorreu um erro ao buscar o CEP. Tente novamente mais tarde.');
+                console.error('Erro ao buscar CEP:', error);
+            }
+        }
+    </script>
+</body>
+</html>

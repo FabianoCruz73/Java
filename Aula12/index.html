@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f7f6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        color: #333;
+      }
+
+      /* Container principal para centralizar e adicionar espaçamento */
+      body > * {
+        width: 100%;
+        max-width: 500px; /* Largura máxima para desktops */
+        margin-bottom: 15px; /* Espaçamento entre os elementos */
+      }
+
+      /* Estilo para labels */
+      label {
+        display: block; /* Garante que a label fique acima do input */
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #555;
+      }
+
+      /* Estilo para inputs de texto e número */
+      input[type="number"],
+      input[type="text"] {
+        width: calc(100% - 20px); /* Ocupa a largura total menos o padding */
+        padding: 10px;
+        margin-bottom: 10px; /* Espaçamento abaixo do input */
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+        font-size: 1em;
+      }
+
+      input[readonly] {
+        background-color: #e9ecef;
+        cursor: not-allowed;
+      }
+
+      /* Estilo para o botão */
+      button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease;
+        width: 100%;
+        max-width: 500px; /* Mesma largura máxima que os outros elementos */
+        box-sizing: border-box;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      /* Estilo para os divs que contêm labels e inputs */
+      div {
+        width: 100%;
+        max-width: 500px; /* Mesma largura máxima */
+        margin-bottom: 15px; /* Espaçamento entre os blocos */
+      }
+
+      /* --- Media Queries para Responsividade --- */
+
+      /* Telas Pequenas (Smartphones) */
+      @media (max-width: 600px) {
+        body {
+          padding: 10px;
+        }
+
+        body > *,
+        div,
+        button,
+        input {
+          max-width: 100%; /* Ocupa a largura total em telas pequenas */
+        }
+
+        input[type="number"],
+        input[type="text"] {
+          padding: 8px;
+          font-size: 0.95em;
+        }
+
+        button {
+          padding: 12px 15px;
+          font-size: 1em;
+        }
+      }
+
+      /* Telas Médias (Tablets) */
+      @media (min-width: 601px) and (max-width: 900px) {
+        body {
+          padding: 15px;
+        }
+
+        body > *,
+        div,
+        button,
+        input {
+          max-width: 400px; /* Um pouco mais estreito para tablets */
+        }
+
+        input[type="number"],
+        input[type="text"] {
+          padding: 9px;
+          font-size: 0.98em;
+        }
+
+        button {
+          padding: 13px 18px;
+          font-size: 1.05em;
+        }
+      }
+
+      /* Telas Grandes (Desktops) - Já coberto pelo estilo base, mas pode ser ajustado se necessário */
+      @media (min-width: 901px) {
+        body {
+          padding: 20px;
+        }
+
+        body > *,
+        div,
+        button,
+        input {
+          max-width: 500px; /* Largura máxima padrão para desktops */
+        }
+      }
+    </style>
+
+    
+    <label for="">CEP</label>
+    <input type="number" id="cep" />
+
+    <button id="botao" onclick="carregarCEP()">Buscar CEP</button>
+
+    <div>
+      <label for="">Rua</label>
+      <input type="text" id="rua" readonly />
+    </div>
+
+    <div>
+      <label for="">Bairro</label>
+      <input type="text" id="bairro" readonly />
+    </div>
+
+    <div>
+      <label for="">Cidade</label>
+      <input type="text" id="city" readonly />
+    </div>
+
+    <div>
+      <label for="">UF</label>
+      <input type="text" id="uf" readonly />
+    </div>
+
+    <script>
+      const ruaInput = document.querySelector("#rua");
+      const bairroInput = document.querySelector("#bairro");
+      const cityInput = document.querySelector("#city");
+      const UFInput = document.querySelector("#uf");
+
+      async function carregarCEP() {
+        const cepInput = document.querySelector("#cep").value;
+
+        const url = `https://viacep.com.br/ws/${cepInput}/json/`;
+
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+        ruaInput.value = data.logradouro;
+        bairroInput.value = data.bairro;
+        cityInput.value = data.localidade;
+        UFInput.value = data.uf;
+      }
+      // carregarCEP()
+    </script>
+  </body>
+</html>
