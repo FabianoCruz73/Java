@@ -799,4 +799,304 @@ Salvem 5 tarefas no LocalStorage
 
 Aula 12
 
+https://dontpad.com/519-26-06
+
+Boa noiteeeeeeee
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEP</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        input[readonly] {
+            background-color: #ecf0f1;
+            cursor: not-allowed;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            input, button {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="cep">CEP</label>
+        <input type="number" id="cep">
+
+        <button id="botao" onclick="carregarCEP()">Buscar CEP</button>
+
+        <div>
+            <label for="rua">Rua</label>
+            <input type="text" id="rua" readonly>
+        </div>
+        <div>
+            <label for="city">Cidade</label>
+            <input type="text" id="city" readonly>
+        </div>
+        <div>
+            <label for="uf">UF</label>
+            <input type="text" id="uf" readonly>
+        </div>
+    </div>
+
+    <script>
+        const ruaInput = document.querySelector("#rua")
+        const cityInput = document.querySelector("#city")
+        const UFInput = document.querySelector("#uf")
+        async function carregarCEP(){
+            const cepInput = document.querySelector("#cep").value 
+            const url = `https://viacep.com.br/ws/${cepInput}/json/`
+            const response = await fetch(url)
+            const data = await response.json()
+            ruaInput.value = data.logradouro
+            cityInput.value = data.localidade
+            UFInput.value = data.estado
+        }
+        // carregarCEP()
+    </script>
+</body>
+</html>
+==============================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de CEP</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        input[readonly] {
+            background-color: #ecf0f1;
+            cursor: not-allowed;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            input, button {
+                padding: 10px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <label for="cep">CEP</label>
+        <input type="number" id="cep">
+
+        <button id="botao" onclick="carregarCEP()">Buscar CEP</button>
+
+        <div>
+            <label for="rua">Rua</label>
+            <input type="text" id="rua" readonly>
+        </div>
+        <div>
+            <label for="city">Cidade</label>
+            <input type="text" id="city" readonly>
+        </div>
+        <div>
+            <label for="uf">UF</label>
+            <input type="text" id="uf" readonly>
+        </div>
+    </div>
+
+    <script>
+
+        const ruaInput = document.querySelector("#rua")
+        const cityInput = document.querySelector("#city")
+        const UFInput = document.querySelector("#uf")
+        
+        async function carregarCEP(){
+        
+            const cepInput = document.querySelector("#cep").value 
+            const url = `https://cep.awesomeapi.com.br/json/${cepInput}
+
+`
+            
+            try{
+                const response = await fetch(url)
+                const data =  await response.json()
+                console.log(data)
+                if (response.status != 200){
+                    throw new Error ("Erro ao fazer a requisição")
+                }
+                // ruaInput.value = data.logradouro
+                // cityInput.value = data.localidade
+                // UFInput.value = data.estado
+                
+            }catch(e){
+                console.log(`Erro na requisição ${e.message} `)
+            }
+        }
+        // carregarCEP()
+    </script>
+</body>
+</html>
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Aula 13
+
 
