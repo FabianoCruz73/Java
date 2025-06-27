@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -188,6 +186,21 @@
         async function carregarCEP(){
             const cepInput = document.querySelector("#cep").value
             const url = `https://viacep.com.br/ws/${cepInput}/json/`
+
+            // opção de outro API de buscador de CEP
+            // const url = `https://cep.awesomeapi.com.br/json/${cepInput}`
+
+            "cep": "01001000",
+            "address_type": "Praça",
+            "address_name": "da Sé",
+            "address": "Praça da Sé",
+            "state": "SP",
+            "district": "Sé",
+            "lat": "-23.5502784",
+            "lng": "-46.6342179",
+            "city": "São Paulo",
+            "city_ibge": "3550308",
+            "ddd": "11"
 
             try {
                 const response = await fetch(url)
