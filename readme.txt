@@ -1099,4 +1099,27 @@ Boa noiteeeeeeee
 
 Aula 13
 
+https://mockapi.io/
+logar com o github
+
+BOa noiteeeeeeeee
+
+mockapi.io
+
+link da api do professor 
+https://686707eae3fefb261edd8b97.mockapi.io/api/produtos
+
+https://classroom.google.com/c/NzcxMzYzNzcwOTkw/m/Nzg4NjE5NzE5MzY4/details
+
+link da nossa turma do classroom
+https://classroom.google.com/c/NzcxMzYzNzcwOTkw?cjc=zbxcbbgq
+
+zbxcbbgq
+
+
+material da aula de hoje
+https://drive.google.com/file/d/1p5X0KNw_yU8CXeq_AcvXFzjihNycp91O/view?usp=sharing
+
+===============================
+
 
