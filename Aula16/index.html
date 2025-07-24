@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    #taskInput {
+      width: 70%;
+      padding: 8px;
+    }
+    #addBtn {
+      padding: 8px 12px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      background: white;
+      margin: 5px 0;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ccc;
+    }
+    .task-text {
+      flex-grow: 1;
+      margin-left: 10px;
+    }
+    .done-text {
+      text-decoration: line-through;
+    }
+    .status-label {
+      margin-left: 10px;
+      font-weight: bold;
+    }
+    .pendente {
+      color: red;
+    }
+    .concluida {
+      color: green;
+    }
+    button {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Tarefas</h1>
+  <input type="text" id="taskInput" placeholder="Digite uma tarefa...">
+  <button id="addBtn">Adicionar</button>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    const taskInput = document.getElementById("taskInput");
+    const taskList = document.getElementById("taskList");
+    const addBtn = document.getElementById("addBtn");
+
+    let tasks = [];
+
+    function loadTasks() {
+      const data = localStorage.getItem("tasks");
+      if (data) {
+        tasks = JSON.parse(data);
+        tasks.forEach(createTaskElement);
+      }
+    }
+
+    function saveTasks() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function createTaskElement(task) {
+      const li = document.createElement("li");
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.checked = task.status === "Concluída";
+
+      const taskText = document.createElement("div");
+      taskText.className = "task-text";
+      taskText.textContent = task.text;
+      if (task.status === "Concluída") {
+        taskText.classList.add("done-text");
+      }
+
+      const statusLabel = document.createElement("span");
+      statusLabel.className = "status-label " + (task.status === "Concluída" ? "concluida" : "pendente");
+      statusLabel.textContent = task.status;
+
+      checkbox.onchange = () => {
+        task.status = checkbox.checked ? "Concluída" : "Pendente";
+        statusLabel.textContent = task.status;
+        statusLabel.className = "status-label " + (checkbox.checked ? "concluida" : "pendente");
+        taskText.classList.toggle("done-text", checkbox.checked);
+        saveTasks();
+      };
+
+      const editBtn = document.createElement("button");
+      editBtn.textContent = "Editar";
+      editBtn.onclick = () => {
+        const novoTexto = prompt("Editar tarefa:", task.text);
+        if (novoTexto !== null && novoTexto.trim() !== "") {
+          task.text = novoTexto.trim();
+          taskText.textContent = task.text;
+          saveTasks();
+        }
+      };
+
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "Remover";
+      delBtn.onclick = () => {
+        tasks = tasks.filter(t => t !== task);
+        li.remove();
+        saveTasks();
+      };
+
+      li.appendChild(checkbox);
+      li.appendChild(taskText);
+      li.appendChild(statusLabel);
+      li.appendChild(editBtn);
+      li.appendChild(delBtn);
+
+      taskList.appendChild(li);
+    }
+
+    function addTask() {
+      const text = taskInput.value.trim();
+      if (text === "") return;
+
+      const task = { text, status: "Pendente" };
+      tasks.push(task);
+      createTaskElement(task);
+      saveTasks();
+      taskInput.value = "";
+    }
+
+    addBtn.onclick = addTask;
+    taskInput.addEventListener("keypress", e => {
+      if (e.key === "Enter") addTask();
+    });
+
+    loadTasks();
+  </script>
+</body>
+</html>

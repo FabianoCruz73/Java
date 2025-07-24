@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo */
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 50px; /* Espaço para o cabeçalho */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.adicionar-tarefa {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+#inputTarefa {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#btnAdicionarTarefa {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+#btnAdicionarTarefa:hover {
+    background-color: #218838;
+}
+
+#listaDeTarefas {
+    list-style: none;
+    padding: 0;
+}
+
+.item-tarefa { /* Alterado de .task-item */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-tarefa:last-child {
+    border-bottom: none;
+}
+
+.item-tarefa.concluida span { /* Alterado de .completed */
+    text-decoration: line-through;
+    color: #888;
+}
+
+.conteudo-tarefa { /* Alterado de .task-content */
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    cursor: pointer;
+}
+
+.conteudo-tarefa input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Aumenta o tamanho do checkbox */
+}
+
+.acoes-tarefa button { /* Alterado de .task-actions */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.acoes-tarefa .btn-excluir { /* Alterado de .delete-btn */
+    color: #dc3545;
+}
+
+.acoes-tarefa .btn-excluir:hover {
+    color: #c82333;
+}
