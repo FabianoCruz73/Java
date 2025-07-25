@@ -1121,5 +1121,8 @@ material da aula de hoje
 https://drive.google.com/file/d/1p5X0KNw_yU8CXeq_AcvXFzjihNycp91O/view?usp=sharing
 
 ===============================
+ Aula 16 - final
 
+Projeto
+https://www.notion.so/E-commerce-com-Local-Storage-1cd2e74cf89380d2b348efc92120d01d?source=copy_link
 
